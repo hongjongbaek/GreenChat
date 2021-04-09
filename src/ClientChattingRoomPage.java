@@ -11,85 +11,85 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientChattingRoomPage extends JFrame{
-	//ÆùÆ® »ı¼º
-	Font font = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-	//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+	Font font = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+	//í…Œë‘ë¦¬ ìƒì„±
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-	//º¼·ÏÇÑ ¹öÆ°
+	//ë³¼ë¡í•œ ë²„íŠ¼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 		
 	public ClientChattingRoomPage() {
-		//ÇÁ·¹ÀÓ »çÀÌÁî ¼³Á¤
+		//í”„ë ˆì„ ì‚¬ì´ì¦ˆ ì„¤ì •
 		setSize(747, 736);
-		//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+		//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 		setTitle("GREEN Chat");
-		//·¹ÀÌ¾Æ¿ô ¼³Á¤
+		//ë ˆì´ì•„ì›ƒ ì„¤ì •
 		getContentPane().setLayout(null);
-		//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+		//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 		setLocationRelativeTo(null);
-		//Ã¢Å©±â º¯°æ ºÒ°¡
+		//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 		setResizable(false);
 		
-		//ÅØ½ºÆ® ÇÊµå »ı¼º
+		//í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 		JTextArea readArea = new JTextArea();
-		//½ºÅ©·Ñ ÆĞ³Î »ı¼º
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ìƒì„±
 		JScrollPane readScroll = new JScrollPane(readArea);
-		//½ºÅ©·Ñ ÆĞ³Î Å©±â ¼³Á¤
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ í¬ê¸° ì„¤ì •
 		readScroll.setSize(531, 600);
-		//½ºÅ©·Ñ ÆĞ³Î À§Ä¡ ¼³Á¤
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ìœ„ì¹˜ ì„¤ì •
 		readScroll.setLocation(0, 0);
-		//½ºÅ©·Ñ¹Ù ÇÊ¿ä½Ã¸¸ »ı¼º
+		//ìŠ¤í¬ë¡¤ë°” í•„ìš”ì‹œë§Œ ìƒì„±
 		readScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		//ÅØ½ºÆ® ÇÊµå ÆùÆ® ¼³Á¤
+		//í…ìŠ¤íŠ¸ í•„ë“œ í°íŠ¸ ì„¤ì •
 		readArea.setFont(font);
-		//ÅØ½ºÆ® ÇÊµå ¼öÁ¤ ºÒ°¡ ¼³Á¤
+		//í…ìŠ¤íŠ¸ í•„ë“œ ìˆ˜ì • ë¶ˆê°€ ì„¤ì •
 		readArea.setEditable(false);
-		//½ºÅ©·Ñ ÆĞ³Î Ãß°¡
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ì¶”ê°€
 		getContentPane().add(readScroll);
 		
-		//ÅØ½ºÆ® ÇÊµå »ı¼º
+		//í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 		JTextArea writeArea = new JTextArea();
-		//½ºÅ©·Ñ ÆĞ³Î »ı¼º
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ìƒì„±
 		JScrollPane writeScroll = new JScrollPane(writeArea);
-		//½ºÅ©·Ñ ÆĞ³Î Å©±â ¼³Á¤
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ í¬ê¸° ì„¤ì •
 		writeScroll.setSize(531, 50);
-		//½ºÅ©·Ñ ÆĞ³Î À§Ä¡ ¼³Á¤
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ìœ„ì¹˜ ì„¤ì •
 		writeScroll.setLocation(0, 600);
-		//½ºÅ©·Ñ¹Ù ÇÊ¿ä½Ã¸¸ »ı¼º
+		//ìŠ¤í¬ë¡¤ë°” í•„ìš”ì‹œë§Œ ìƒì„±
 		writeScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		//ÅØ½ºÆ® ÇÊµå ÆùÆ® ¼³Á¤
+		//í…ìŠ¤íŠ¸ í•„ë“œ í°íŠ¸ ì„¤ì •
 		readArea.setFont(font);
-		//½ºÅ©·Ñ ÆĞ³Î Ãß°¡
+		//ìŠ¤í¬ë¡¤ íŒ¨ë„ ì¶”ê°€
 		getContentPane().add(writeScroll);
 		
-		//¹öÆ° °ø°£ È®º¸
+		//ë²„íŠ¼ ê³µê°„ í™•ë³´
 		RoundButton[] btn = new RoundButton[5];
 		for(int i = 0; i < 5; i++) {
-			//¹öÆ° »ı¼º
+			//ë²„íŠ¼ ìƒì„±
 			btn[i] = new RoundButton();
-			//¹öÆ° Å©±â ¼³Á¤
+			//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 			btn[i].setSize(100, 35);
-			//¹öÆ° À§Ä¡ ¼³Á¤
+			//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 			btn[i].setLocation(5 + (i * 105), 655);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			btn[i].setFont(font);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			btn[i].setHorizontalAlignment(JLabel.CENTER);
-			//º¸´õ Ãß°¡
+			//ë³´ë” ì¶”ê°€
 			btn[i].setBorder(border2);
-			//¹öÆ° Ãß°¡
+			//ë²„íŠ¼ ì¶”ê°€
 			getContentPane().add(btn[i]);
 		}
-		btn[0].setText("¼³Á¤");
-		btn[1].setText("Âü°¡ÀÚ");
-		btn[2].setText("¿Ã¸®±â");
-		btn[3].setText("³»·Á¹Ş±â");
-		btn[4].setText("³ª°¡±â");
+		btn[0].setText("ì„¤ì •");
+		btn[1].setText("ì°¸ê°€ì");
+		btn[2].setText("ì˜¬ë¦¬ê¸°");
+		btn[3].setText("ë‚´ë ¤ë°›ê¸°");
+		btn[4].setText("ë‚˜ê°€ê¸°");
 		
-		//ÇÁ·¹ÀÓ º¸ÀÌ°Ô ÇÏ±â
+		//í”„ë ˆì„ ë³´ì´ê²Œ í•˜ê¸°
 		setVisible(true);
 		
-		//¼³Á¤ ¾×¼Ç ¸®½º³Ê
+		//ì„¤ì • ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[0].addActionListener(new ActionListener() {
 			
 			@Override
@@ -98,7 +98,7 @@ public class ClientChattingRoomPage extends JFrame{
 			}
 		});
 		
-		//Âü°¡ÀÚ ¾×¼Ç ¸®½º³Ê
+		//ì°¸ê°€ì ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[1].addActionListener(new ActionListener() {
 			
 			@Override
@@ -107,7 +107,7 @@ public class ClientChattingRoomPage extends JFrame{
 			}
 		});
 		
-		//¿Ã¸®±â ¾×¼Ç ¸®½º³Ê
+		//ì˜¬ë¦¬ê¸° ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[2].addActionListener(new ActionListener() {
 	
 			@Override
@@ -116,7 +116,7 @@ public class ClientChattingRoomPage extends JFrame{
 			}
 		});
 		
-		//³»·Á¹Ş±â ¾×¼Ç ¸®½º³Ê
+		//ë‚´ë ¤ë°›ê¸° ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[3].addActionListener(new ActionListener() {
 	
 			@Override
@@ -125,7 +125,7 @@ public class ClientChattingRoomPage extends JFrame{
 			}
 		});
 
-		//³ª°¡±â ¾×¼Ç ¸®½º³Ê
+		//ë‚˜ê°€ê¸° ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[4].addActionListener(new ActionListener() {
 	
 			@Override

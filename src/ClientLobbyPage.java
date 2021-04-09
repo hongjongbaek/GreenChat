@@ -12,122 +12,122 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientLobbyPage extends JFrame{
-	//ÆùÆ® »ı¼º
-	Font font = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-	Font lebelFont = new Font("¸¼Àº °íµñ", Font.PLAIN, 12);
-	//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+	Font font = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+	Font lebelFont = new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 12);
+	//í…Œë‘ë¦¬ ìƒì„±
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-	//º¼·ÏÇÑ ¹öÆ°
+	//ë³¼ë¡í•œ ë²„íŠ¼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
 	public ClientLobbyPage() {
-		//ÇÁ·¹ÀÓ »çÀÌÁî ¼³Á¤
+		//í”„ë ˆì„ ì‚¬ì´ì¦ˆ ì„¤ì •
 		setSize(565, 342);
-		//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+		//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 		setTitle("GREEN Chat");
-		//·¹ÀÌ¾Æ¿ô ¼³Á¤
+		//ë ˆì´ì•„ì›ƒ ì„¤ì •
 		getContentPane().setLayout(null);
-		//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+		//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 		setLocationRelativeTo(null);
-		//Ã¢Å©±â º¯°æ ºÒ°¡
+		//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 		setResizable(false);
-		//x¹öÆ°½Ã Á¾·á
+		//xë²„íŠ¼ì‹œ ì¢…ë£Œ
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		//ÁÂÃø ¹öÆ°
+		//ì¢Œì¸¡ ë²„íŠ¼
 		RoundButton[] leftBtn = new RoundButton[3];
 		for(int i = 0 ; i < 3; i++) {
-			//¹öÆ° »ı¼º
+			//ë²„íŠ¼ ìƒì„±
 			leftBtn[i] = new RoundButton();
-			//¹öÆ° Å©±â ¼³Á¤
+			//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 			leftBtn[i].setSize(80, 80);
-			//¹öÆ° À§Ä¡ ¼³Á¤
+			//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 			leftBtn[i].setLocation(5, (i * 89) + 5);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			leftBtn[i].setFont(font);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			leftBtn[i].setHorizontalAlignment(JLabel.CENTER);
-			//¹öÆ° Ãß°¡
+			//ë²„íŠ¼ ì¶”ê°€
 			getContentPane().add(leftBtn[i]);
 		}
-		//¹öÆ° ÅØ½ºÆ® ¼³Á¤
-		leftBtn[0].setText("ÇÁ·ÎÇÊ");
-		leftBtn[1].setText("¹æ¸¸µé±â");
-		leftBtn[2].setText("»õ·Î°íÄ§");
+		//ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
+		leftBtn[0].setText("í”„ë¡œí•„");
+		leftBtn[1].setText("ë°©ë§Œë“¤ê¸°");
+		leftBtn[2].setText("ìƒˆë¡œê³ ì¹¨");
 		
-		//Áß¾Ó ¹öÆ°
+		//ì¤‘ì•™ ë²„íŠ¼
 		RoundButton[] centerBtn = new RoundButton[5];
 		for(int i = 0 ; i < 5; i++) {
-			//¹öÆ° »ı¼º
+			//ë²„íŠ¼ ìƒì„±
 			centerBtn[i] = new RoundButton();
-			//¹öÆ° Å©±â ¼³Á¤
+			//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 			centerBtn[i].setSize(450, 50);
-			//¹öÆ° À§Ä¡ ¼³Á¤
+			//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 			centerBtn[i].setLocation(94, (i * 52) + 5);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			centerBtn[i].setFont(font);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			centerBtn[i].setHorizontalAlignment(JLabel.CENTER);
-			//¹öÆ° ÅØ½ºÆ® ¼³Á¤
+			//ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
 			centerBtn[i].setText("");
-			//¹öÆ° Ãß°¡
+			//ë²„íŠ¼ ì¶”ê°€
 			getContentPane().add(centerBtn[i]);
 		}
 		
-		//ÇÏ´Ü ¹öÆ°
+		//í•˜ë‹¨ ë²„íŠ¼
 		RoundButton[] bottomBtn = new RoundButton[2];
 		for(int i = 0 ; i < 2; i++) {
-			//¹öÆ° »ı¼º
+			//ë²„íŠ¼ ìƒì„±
 			bottomBtn[i] = new RoundButton();
-			//¹öÆ° Å©±â ¼³Á¤
+			//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 			bottomBtn[i].setSize(50, 30);
-			//¹öÆ° À§Ä¡ ¼³Á¤
+			//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 			bottomBtn[i].setLocation(257 + (i * 60), 268);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			bottomBtn[i].setFont(font);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			bottomBtn[i].setHorizontalAlignment(JLabel.CENTER);
-			//¹öÆ° Ãß°¡
+			//ë²„íŠ¼ ì¶”ê°€
 			getContentPane().add(bottomBtn[i]);
 		}
-		//¹öÆ° ÅØ½ºÆ® ¼³Á¤
-		bottomBtn[0].setText("ÀÌÀü");
-		bottomBtn[1].setText("´ÙÀ½");
+		//ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
+		bottomBtn[0].setText("ì´ì „");
+		bottomBtn[1].setText("ë‹¤ìŒ");
 		
-		//¹öÆ° »ı¼º
+		//ë²„íŠ¼ ìƒì„±
 		RoundButton logoutBtn = new RoundButton();
-		//¹öÆ° Å©±â ¼³Á¤
+		//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 		logoutBtn.setSize(70, 30);
-		//¹öÆ° À§Ä¡ ¼³Á¤
+		//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 		logoutBtn.setLocation(474, 268);
-		//¹öÆ° ÆùÆ® ¼³Á¤
+		//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 		logoutBtn.setFont(font);
-		//¹öÆ° °¡¿îµ¥ Á¤·Ä
+		//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 		logoutBtn.setHorizontalAlignment(JLabel.CENTER);
-		//¹öÆ° ÅØ½ºÆ® Ãß°¡
-		logoutBtn.setText("·Î±×¾Æ¿ô");
-		//¹öÆ° Ãß°¡
+		//ë²„íŠ¼ í…ìŠ¤íŠ¸ ì¶”ê°€
+		logoutBtn.setText("ë¡œê·¸ì•„ì›ƒ");
+		//ë²„íŠ¼ ì¶”ê°€
 		getContentPane().add(logoutBtn);
 		
-		//¶óº§ »ı¼º
+		//ë¼ë²¨ ìƒì„±
 		JLabel text = new JLabel();
-		//¶óº§ Å©±â ¼³Á¤
+		//ë¼ë²¨ í¬ê¸° ì„¤ì •
 		text.setSize(250, 30);
-		//¶óº§ À§Ä¡ ¼³Á¤
+		//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 		text.setLocation(5, 268);
-		//¶óº§ ÆùÆ® ¼³Á¤
+		//ë¼ë²¨ í°íŠ¸ ì„¤ì •
 		text.setFont(lebelFont);
-		//¶óº§ °¡¿îµ¥ Á¤·Ä
+		//ë¼ë²¨ ê°€ìš´ë° ì •ë ¬
 		text.setHorizontalAlignment(JLabel.CENTER);
-		//¶óº§ ÅØ½ºÆ® ¼³Á¤
-		text.setText("ÇöÀç Á¢¼Ó ÀÎ¿øÀº n¸íÀÔ´Ï´Ù.");
-		//¶óº§ Ãß°¡
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì„¤ì •
+		text.setText("í˜„ì¬ ì ‘ì† ì¸ì›ì€ nëª…ì…ë‹ˆë‹¤.");
+		//ë¼ë²¨ ì¶”ê°€
 		getContentPane().add(text);
 		
-		//ÇÁ·¹ÀÓ º¸ÀÌ°Ô ÇÏ±â
+		//í”„ë ˆì„ ë³´ì´ê²Œ í•˜ê¸°
 		setVisible(true);
 		
-		//ÇÁ·ÎÇÊ ¾×¼Ç ¸®½º³Ê
+		//í”„ë¡œí•„ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		leftBtn[0].addActionListener(new ActionListener() {
 			
 			@Override
@@ -136,7 +136,7 @@ public class ClientLobbyPage extends JFrame{
 			}
 		});
 		
-		//¹æ¸¸µé±â ¾×¼Ç ¸®½º³Ê
+		//ë°©ë§Œë“¤ê¸° ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		leftBtn[1].addActionListener(new ActionListener() {
 					
 			@Override
@@ -145,7 +145,7 @@ public class ClientLobbyPage extends JFrame{
 			}
 		});
 		
-		//»õ·Î°íÄ§ ¾×¼Ç ¸®½º³Ê
+		//ìƒˆë¡œê³ ì¹¨ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		leftBtn[2].addActionListener(new ActionListener() {
 					
 			@Override
@@ -154,7 +154,7 @@ public class ClientLobbyPage extends JFrame{
 			}
 		});
 		
-		//¹æ ¹öÆ° ¾×¼Ç ¸®½º³Ê
+		//ë°© ë²„íŠ¼ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		for(int i = 0; i < 5; i++) {
 			centerBtn[i].addActionListener(new ActionListener() {
 				
@@ -165,7 +165,7 @@ public class ClientLobbyPage extends JFrame{
 			});
 		}
 		
-		//ÀÌÀü ÆäÀÌÁö ¾×¼Ç ¸®½º³Ê
+		//ì´ì „ í˜ì´ì§€ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		bottomBtn[0].addActionListener(new ActionListener() {
 							
 			@Override
@@ -174,7 +174,7 @@ public class ClientLobbyPage extends JFrame{
 			}
 		});
 		
-		//´ÙÀ½ ÆäÀÌÁö ¾×¼Ç ¸®½º³Ê
+		//ë‹¤ìŒ í˜ì´ì§€ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		bottomBtn[1].addActionListener(new ActionListener() {
 									
 			@Override
@@ -183,7 +183,7 @@ public class ClientLobbyPage extends JFrame{
 			}
 		});
 		
-		//·Î±×¾Æ¿ô ¾×¼Ç ¸®½º³Ê
+		//ë¡œê·¸ì•„ì›ƒ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		logoutBtn.addActionListener(new ActionListener() {
 			
 			@Override

@@ -17,7 +17,7 @@ public class ClientMain {
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			Scanner scanner = new Scanner(System.in);
 			
-			System.out.println("»ç¿ëÀÚ µé¾î°¡¿ê!");
+			System.out.println("ì‚¬ìš©ì ë“¤ì–´ê°€ìš§!");
 			String chk = scanner.nextLine();
 			
 			dos.writeUTF(chk);

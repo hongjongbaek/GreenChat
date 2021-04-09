@@ -28,8 +28,8 @@ public class RoundButton extends JButton {
     protected void decorate() { setBorderPainted(false); setOpaque(false); }
     @Override 
     protected void paintComponent(Graphics g) {
-       Color c = new Color(100,100,100); //¹è°æ»ö °áÁ¤
-       Color o = new Color(255,255,255); //±ÛÀÚ»ö °áÁ¤
+       Color c = new Color(100,100,100); //ë°°ê²½ìƒ‰ ê²°ì •
+       Color o = new Color(255,255,255); //ê¸€ììƒ‰ ê²°ì •
        
        int width = getWidth(); 
        int height = getHeight(); 
