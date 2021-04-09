@@ -155,6 +155,6 @@ public class UserDAO {
 			MyConnectionProvider.closeStmt(pstmt);
 			MyConnectionProvider.closeConnection(conn);
 		}
-		return -1;
+		return -1; 
 	}
 }
