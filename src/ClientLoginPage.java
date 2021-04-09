@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
+import kr.co.greenart.UserDAO;
+
 public class ClientLoginPage extends JFrame {
 	//폰트 생성
 	Font font = new Font("맑은 고딕", Font.BOLD, 16);
@@ -119,8 +121,16 @@ public class ClientLoginPage extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ClientLobbyPage clp = new ClientLobbyPage();
-				dispose();
+				int dao = UserDAO.login(idField.getText(),
+						new String(passwordField.getPassword()));
+				if(dao != 1) {
+					JOptionPane.showMessageDialog(
+							null, "아이디 또는 비밀번호가 일치하지 않습니다.");
+				} else {
+					ClientLobbyPage clp = new ClientLobbyPage();
+					dispose();
+				}
+				
 			}
 		});
 		
