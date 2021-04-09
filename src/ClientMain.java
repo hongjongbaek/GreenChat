@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
-
+ 
 public class ClientMain {
 	private static final int PORT = 1239;
 
