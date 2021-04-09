@@ -21,10 +21,11 @@ public class ClientLobbyPage extends JFrame{
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
-	
+	//타이머 제어 인수
+	int textTimercount = 0;
 	public ClientLobbyPage() {
-		//프레임 사이즈 설정
-		setSize(565, 347);
+		//프레임 크기 지정
+		setSize(565, 382);
 		//프레임 이름 지정
 		setTitle("GREEN Chat");
 		//레이아웃 설정
@@ -99,11 +100,11 @@ public class ClientLobbyPage extends JFrame{
 		bottomBtn[1].setText("▶");
 		
 		//버튼 생성
-		RoundButton_DarkGray logoutBtn = new RoundButton_DarkGray();
+		RoundButton_Text logoutBtn = new RoundButton_Text();
 		//버튼 크기 설정
 		logoutBtn.setSize(70, 30);
 		//버튼 위치 설정
-		logoutBtn.setLocation(474, 273);
+		logoutBtn.setLocation(474, 308);
 		//버튼 폰트 설정
 		logoutBtn.setFont(font);
 		//버튼 가운데 정렬
@@ -114,9 +115,9 @@ public class ClientLobbyPage extends JFrame{
 		getContentPane().add(logoutBtn);
 		
 		//버튼 생성
-		RoundButton_Text text1 = new RoundButton_Text();
+		RoundButton_Green text1 = new RoundButton_Green();
 		//버튼 크기 설정
-		text1.setSize(65, 34);
+		text1.setSize(65, 65);
 		//버튼 위치 설정
 		text1.setLocation(10, 235);
 		//버튼 폰트 설정
@@ -135,13 +136,74 @@ public class ClientLobbyPage extends JFrame{
 		//라벨 크기 설정
 		text2.setSize(250, 30);
 		//라벨 위치 설정
-		text2.setLocation(10, 273);
+		text2.setLocation(10, 308);
 		//라벨 폰트 설정
 		text2.setFont(lebelFont);
 		//라벨 텍스트 설정
 		text2.setText("현재 접속 인원은 n명입니다.");
 		//라벨 추가
 		getContentPane().add(text2);
+		
+		//타이머
+		javax.swing.Timer textTimer = new javax.swing.Timer(1400, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				switch (textTimercount) {
+				case 0:
+					text1.setText("정지욱");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 1:
+					text1.setText("김석현");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 2:
+					text1.setText("배원석");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 3:
+					text1.setText("남익희");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 4:
+					text1.setText("홍종백");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 5:
+					text1.setText("이무현");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				case 6:
+					text1.setText("1조");
+					textTimercount++;
+					if(textTimercount == 7) {
+						textTimercount = 0;
+					}
+					break;
+				}
+				
+        	}
+        });
+		
+		textTimer.start();
 		
 		//프레임 보이게 하기
 		setVisible(true);

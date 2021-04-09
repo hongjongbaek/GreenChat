@@ -21,15 +21,15 @@ public class ClientChattingRoomPage extends JFrame{
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	//테이블 헤더 생성
-	String[] head = {"닉네임", "이름", "성별", "나이"};
+	String[] head = {"닉네임", "성별"};
 	//테이블 바디 생성
 	String[][] body = 
-		{{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}};
+		{{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",}};
 	//참가자 버튼 확인
 	boolean memberCheck = false;
 	
@@ -85,19 +85,19 @@ public class ClientChattingRoomPage extends JFrame{
 			//버튼 생성
 			btn[i] = new RoundButton_DarkGray();
 			//버튼 크기 설정
-			btn[i].setSize(100, 35);
+			btn[i].setSize(102, 35);
 			//버튼 위치 설정
-			if(i < 5) {
-				btn[i].setLocation(10 + (i * 105), 785);
-			} else {
-				btn[i].setLocation(20 + (i * 105), 785);
-			}
+			btn[i].setLocation(5 + (i * 107), 785);
 			//버튼 폰트 설정
 			btn[i].setFont(font);
 			//버튼 가운데 정렬
 			btn[i].setHorizontalAlignment(JLabel.CENTER);
 			//보더 추가
 			btn[i].setBorder(border2);
+			if(i > 4) {
+				btn[i].setVisible(false);
+			}
+			
 			//버튼 추가
 			getContentPane().add(btn[i]);
 		}
@@ -153,9 +153,15 @@ public class ClientChattingRoomPage extends JFrame{
 				if(!memberCheck) {
 					//프레임 사이즈 설정
 					setSize(877, 866);
+					for(int i = 5; i < 8 ; i++) {
+						btn[i].setVisible(true);
+					}
 					memberCheck = true;
 				} else {
 					setSize(558, 866);
+					for(int i = 5; i < 8 ; i++) {
+						btn[i].setVisible(false);
+					}
 					memberCheck = false;
 				}
 			}
