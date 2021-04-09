@@ -112,7 +112,7 @@ public class ClientMakeRoom extends JFrame {
 		radio[1].setSelected(true);
 		
 		//버튼 생성
-		RoundButton btn = new RoundButton("생성");
+		RoundButton_DarkGray btn = new RoundButton_DarkGray("생성");
 		//라벨 크기 설정
 		btn.setSize(80, 30);
 		//라벨 위치 설정

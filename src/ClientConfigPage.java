@@ -111,7 +111,7 @@ public class ClientConfigPage extends JFrame{
 			radio[1].setSelected(true);
 			
 			//버튼 생성
-			RoundButton btn = new RoundButton("변경");
+			RoundButton_DarkGray btn = new RoundButton_DarkGray("변경");
 			//라벨 크기 설정
 			btn.setSize(80, 30);
 			//라벨 위치 설정

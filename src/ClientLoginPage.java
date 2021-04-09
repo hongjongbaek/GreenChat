@@ -93,10 +93,10 @@ public class ClientLoginPage extends JFrame {
 		getContentPane().add(passwordField);
 		
 		//버튼 공간 2개 확보
-		RoundButton btn[] = new RoundButton[2];
+		RoundButton_DarkGray btn[] = new RoundButton_DarkGray[2];
 		for(int i = 0; i < 2; i++) {
 			//버튼 생성
-			btn[i] = new RoundButton();
+			btn[i] = new RoundButton_DarkGray();
 			//버튼 크기 설정
 			btn[i].setSize(126, 46);
 			//버튼 위치 설정
