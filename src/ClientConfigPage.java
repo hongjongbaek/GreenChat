@@ -89,6 +89,7 @@ public class ClientConfigPage extends JFrame{
 				radio[i].setSize(55, 40);
 				//라디오 위치 설정
 				radio[i].setLocation(5 + (i * 55), 85);
+				//버튼 그룹에 라디오 추가
 				bg.add(radio[i]);
 				//라디오 추가
 				getContentPane().add(radio[i]);
