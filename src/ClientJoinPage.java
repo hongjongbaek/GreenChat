@@ -191,7 +191,7 @@ setVisible(true);
 									textField[7].getText(), // 핸드폰번호
 									textField[8].getText()); // 이메일주소
 							
-									System.out.println("회원가입 완료");
+									System.out.println("회원가입 완료ㅗ");
 									ClientLoginPage clp = new ClientLoginPage();
 									dispose();
 							} catch (NumberFormatException e2) {
@@ -202,6 +202,7 @@ setVisible(true);
 								e2.printStackTrace();
 							}
 						}
+					
 			}
 		});
 	}
