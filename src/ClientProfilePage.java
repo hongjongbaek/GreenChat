@@ -22,15 +22,12 @@ public class ClientProfilePage extends JFrame {
 		setTitle("GREEN Chat");
 		//레이아웃 설정
 		getContentPane().setLayout(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창크기 변경 불가
 		setResizable(false);
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
-		
-		
-		System.out.println("ddd");
-		
-		
 		
 		//사진 라벨 생성
 		JLabel photo = new JLabel();
@@ -46,6 +43,8 @@ public class ClientProfilePage extends JFrame {
 		photo.setFont(boldFont);
 		//버튼 가운데 정렬
 		photo.setHorizontalAlignment(JLabel.CENTER);
+		//라벨 보더 설정
+		photo.setBorder(border1);
 		//라벨 텍스트 추가
 		photo.setText("사진");
 		//라벨 추가
@@ -68,6 +67,8 @@ public class ClientProfilePage extends JFrame {
 			inf[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			inf[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			inf[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(inf[i]);
 		}
@@ -95,6 +96,8 @@ public class ClientProfilePage extends JFrame {
 			infvalue[i].setFont(plainFont);
 			//버튼 가운데 정렬
 			infvalue[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			infvalue[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(infvalue[i]);
 		}
@@ -122,6 +125,8 @@ public class ClientProfilePage extends JFrame {
 			adress[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			adress[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			adress[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(adress[i]);
 		}
@@ -148,6 +153,8 @@ public class ClientProfilePage extends JFrame {
 			adressValue[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			adressValue[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			adressValue[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(adressValue[i]);
 		}

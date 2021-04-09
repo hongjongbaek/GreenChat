@@ -42,6 +42,8 @@ public class ClientChattingRoomPage extends JFrame{
 		getContentPane().setLayout(null);
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창크기 변경 불가
 		setResizable(false);
 		
@@ -103,7 +105,12 @@ public class ClientChattingRoomPage extends JFrame{
 		btn[4].setText("나가기");
 		
 		//테이블 모델 생성
-		DefaultTableModel tableModel = new DefaultTableModel(body, head);
+		DefaultTableModel tableModel = new DefaultTableModel(body, head) {
+			//모델 수정 불가
+			public boolean isCellEditable(int row, int Column) {
+				return false;
+			}
+		};
 		//테이블 생성
 		JTable memberTable = new JTable();
 		//테이블에 모델 추가
