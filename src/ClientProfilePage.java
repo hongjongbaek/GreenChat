@@ -27,6 +27,11 @@ public class ClientProfilePage extends JFrame {
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
 		
+		
+		System.out.println("ddd");
+		
+		
+		
 		//사진 라벨 생성
 		JLabel photo = new JLabel();
 		//라벨 크기 설정
