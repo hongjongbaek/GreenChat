@@ -29,6 +29,8 @@ public class ClientConfigPage extends JFrame{
 			getContentPane().setLayout(null);
 			//창 가운데 띄우기
 			setLocationRelativeTo(null);
+			//배경색 설정
+			getContentPane().setBackground(new Color(227, 227, 255));
 			//창크기 변경 불가
 			setResizable(false);
 			
@@ -87,6 +89,10 @@ public class ClientConfigPage extends JFrame{
 				radio[i] = new JRadioButton();
 				//라디오 크기 설정
 				radio[i].setSize(55, 40);
+				//배경색 설정 변경 가능
+				radio[i].setOpaque(true);
+				//배경색 설정
+				radio[i].setBackground(new Color(227, 227, 255));
 				//라디오 위치 설정
 				radio[i].setLocation(5 + (i * 55), 85);
 				//버튼 그룹에 라디오 추가

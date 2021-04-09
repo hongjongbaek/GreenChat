@@ -29,6 +29,8 @@ public class ClientMakeRoom extends JFrame {
 		setTitle("GREEN Chat");
 		//레이아웃 설정
 		getContentPane().setLayout(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
 		//창크기 변경 불가
@@ -89,6 +91,10 @@ public class ClientMakeRoom extends JFrame {
 			radio[i] = new JRadioButton();
 			//라디오 크기 설정
 			radio[i].setSize(55, 40);
+			//배경색 설정 변경 가능
+			radio[i].setOpaque(true);
+			//배경색 설정
+			radio[i].setBackground(new Color(227, 227, 255));
 			//라디오 위치 설정
 			radio[i].setLocation(5 + (i * 55), 85);
 			bg.add(radio[i]);

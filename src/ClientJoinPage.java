@@ -35,6 +35,8 @@ public class ClientJoinPage extends JFrame{
 		getContentPane().setLayout(null);
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창크기 변경 불가
 		setResizable(false);
 		//x버튼시 종료

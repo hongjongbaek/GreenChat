@@ -32,6 +32,8 @@ public class ClientLoginPage extends JFrame {
 		setResizable(false);
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//x버튼시 종료
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
