@@ -9,7 +9,7 @@ public class ClientMain {
 	private static final int PORT = 1239;
 
 	public static void main(String[] args) {
-		ClientLoginPage clp = new ClientLoginPage();
+		ClientLoginPage clp = new ClientLoginPage(); 
 		Socket socket = null;
 		try {
 			socket = new Socket("localhost", PORT);

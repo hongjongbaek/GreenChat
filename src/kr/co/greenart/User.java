@@ -1,7 +1,7 @@
 package kr.co.greenart;
 
 public class User {
-	private String id;
+	private String id;  
 	private String password;
 	private String name;
 	private String nickName;
