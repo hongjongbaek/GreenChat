@@ -157,4 +157,120 @@ public class UserDAO {
 		}
 		return -1; 
 	}
+	// id 중복체크
+	public static int idchk(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM user_table WHERE user_id = ?";
+		try {
+			conn = MyConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,  id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String bdid = rs.getString("user_id");
+				if(bdid.equals(id)) {
+					System.out.println("중복 있음!");
+					return -1;
+				}
+			}
+			System.out.println("중복 없음!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MyConnectionProvider.closeRS(rs);
+			MyConnectionProvider.closeStmt(pstmt);
+			MyConnectionProvider.closeConnection(conn);
+		}
+		return 1;
+	}
+//email 중복체크
+	public static int emailchk(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM user_table WHERE user_email = ?";
+		try {
+			conn = MyConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,  email);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String bdid = rs.getString("user_email");
+				if(bdid.equals(email)) {
+					System.out.println("중복 있음!");
+					return -1;
+				}
+			}
+			System.out.println("중복 없음!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MyConnectionProvider.closeRS(rs);
+			MyConnectionProvider.closeStmt(pstmt);
+			MyConnectionProvider.closeConnection(conn);
+		}
+		return 1;
+	}
+//nickname 중복체크
+	public static int nicknamechk(String nickname) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM user_table WHERE user_nickname = ?";
+		try {
+			conn = MyConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,  nickname);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String bdid = rs.getString("user_nickname");
+				if(bdid.equals(nickname)) {
+					System.out.println("중복 있음!");
+					return -1;
+				}
+			}
+			System.out.println("중복 없음!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MyConnectionProvider.closeRS(rs);
+			MyConnectionProvider.closeStmt(pstmt);
+			MyConnectionProvider.closeConnection(conn);
+		}
+		return 1;
+	}
+//phnum 중복체크
+	public static int phnumchk(String phnum) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM user_table WHERE user_phnum = ?";
+		try {
+			conn = MyConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,  phnum);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String bdid = rs.getString("user_phnum");
+				if(bdid.equals(phnum)) {
+					System.out.println("중복 있음!");
+					return -1;
+				}
+			}
+			System.out.println("중복 없음!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MyConnectionProvider.closeRS(rs);
+			MyConnectionProvider.closeStmt(pstmt);
+			MyConnectionProvider.closeConnection(conn);
+		}
+		return 1;
+	}
 }

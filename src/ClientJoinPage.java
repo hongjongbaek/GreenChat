@@ -16,6 +16,9 @@ import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
+import kr.co.greenart.UserDAO;
+
+
 public class ClientJoinPage extends JFrame{
 	//폰트 생성
 	Font font = new Font("맑은 고딕", Font.BOLD, 16);
@@ -160,17 +163,46 @@ public class ClientJoinPage extends JFrame{
 		btn.setText("회원가입");
 		
 		//프레임 보이게 하기
-		setVisible(true);
+setVisible(true);
 		
 		btn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ClientLoginPage clp = new ClientLoginPage();
-				dispose();
+				boolean isNotOK = true;
+				
+					if (UserDAO.idchk(textField[0].getText()) == -1) {
+						JOptionPane.showMessageDialog(null, "아이디 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (UserDAO.nicknamechk(textField[4].getText()) == -1) {
+						JOptionPane.showMessageDialog(null, "닉네임 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (UserDAO.phnumchk(textField[7].getText()) == -1) {
+						JOptionPane.showMessageDialog(null, "휴대폰번호 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (UserDAO.emailchk(textField[8].getText()) == -1) {
+						JOptionPane.showMessageDialog(null, "이메일 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} 
+					else {
+						try {
+							UserDAO.add(textField[0].getText(), // 아이디
+									textField[1].getText(), // 비밀번호
+									textField[3].getText(),	// 이름
+									textField[4].getText(), // 닉네
+									textField[5].getText(), // 성별
+									Integer.parseInt(textField[6].getText()), // 나이
+									textField[7].getText(), // 핸드폰번호
+									textField[8].getText()); // 이메일주소
+							
+									System.out.println("회원가입 완료");
+									ClientLoginPage clp = new ClientLoginPage();
+									dispose();
+							} catch (NumberFormatException e2) {
+								//TODO 오류메세지
+								e2.printStackTrace();
+							} catch (Exception e2) {
+								// TODO: handle exception
+								e2.printStackTrace();
+							}
+						}
 			}
 		});
-		
 	}
-		
 }
