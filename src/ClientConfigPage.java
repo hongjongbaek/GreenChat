@@ -12,111 +12,111 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientConfigPage extends JFrame{
-	//ÆùÆ® »ı¼º
-		Font boldFont = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-		Font plainFont = new Font("¸¼Àº °íµñ", Font.PLAIN, 12);
-		//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+		Font boldFont = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+		Font plainFont = new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 12);
+		//í…Œë‘ë¦¬ ìƒì„±
 		EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-		//º¼·ÏÇÑ ¹öÆ°
+		//ë³¼ë¡í•œ ë²„íŠ¼
 		BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 			
 		public ClientConfigPage() {
-			//ÇÁ·¹ÀÓ Å©±â ÁöÁ¤
+			//í”„ë ˆì„ í¬ê¸° ì§€ì •
 			setSize(384, 165);
-			//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+			//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 			setTitle("GREEN Chat");
-			//·¹ÀÌ¾Æ¿ô ¼³Á¤
+			//ë ˆì´ì•„ì›ƒ ì„¤ì •
 			getContentPane().setLayout(null);
-			//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+			//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 			setLocationRelativeTo(null);
-			//Ã¢Å©±â º¯°æ ºÒ°¡
+			//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 			setResizable(false);
 			
-			//¶óº§ °ø°£ È®º¸
+			//ë¼ë²¨ ê³µê°„ í™•ë³´
 			JLabel[] lbl = new JLabel[2];
 			for(int i = 0; i < 2; i++) {
-				//¶óº§ »ı¼º
+				//ë¼ë²¨ ìƒì„±
 				lbl[i] = new JLabel();
-				//¶óº§ Å©±â ¼³Á¤
+				//ë¼ë²¨ í¬ê¸° ì„¤ì •
 				lbl[i].setSize(60, 40);
-				//¶óº§ À§Ä¡ ¼³Á¤
+				//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 				lbl[i].setLocation(5, 5 + (i * 40));
-				//¶óº§ ÆùÆ® ¼³Á¤
+				//ë¼ë²¨ í°íŠ¸ ì„¤ì •
 				lbl[i].setFont(boldFont);
-				//¶óº§ °¡¿îµ¥ Á¤·Ä
+				//ë¼ë²¨ ê°€ìš´ë° ì •ë ¬
 				lbl[i].setHorizontalAlignment(JLabel.CENTER);
-				//¶óº§ ¹è°æ ¼öÁ¤ °¡´É
+				//ë¼ë²¨ ë°°ê²½ ìˆ˜ì • ê°€ëŠ¥
 				lbl[i].setOpaque(true);
-				//¶óº§ ¹è°æ»ö ¼³Á¤
+				//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 				lbl[i].setBackground(Color.LIGHT_GRAY);
-				//¶óº§ º¸´õ ¼³Á¤
+				//ë¼ë²¨ ë³´ë” ì„¤ì •
 				lbl[i].setBorder(border1);
-				//¶óº§ Ãß°¡
+				//ë¼ë²¨ ì¶”ê°€
 				getContentPane().add(lbl[i]);
 			}
-			//¶óº§ ÅØ½ºÆ® ¼³Á¤
-			lbl[0].setText("ÀÌ¸§");
-			lbl[1].setText("¾ÏÈ£");
+			//ë¼ë²¨ í…ìŠ¤íŠ¸ ì„¤ì •
+			lbl[0].setText("ì´ë¦„");
+			lbl[1].setText("ì•”í˜¸");
 			
-			//ÅØ½ºÆ® ÇÊµå °ø°£ È®º¸
+			//í…ìŠ¤íŠ¸ í•„ë“œ ê³µê°„ í™•ë³´
 			JTextField[] textfield = new JTextField[2];
 			for(int i = 0; i < 2; i++) {
-				//ÅØ½ºÆ® ÇÊµå »ı¼º
+				//í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 				textfield[i] = new JTextField();
-				//ÅØ½ºÆ® ÇÊµå Å©±â ¼³Á¤
+				//í…ìŠ¤íŠ¸ í•„ë“œ í¬ê¸° ì„¤ì •
 				textfield[i].setSize(300, 40);
-				//ÅØ½ºÆ® ÇÊµå À§Ä¡ ¼³Á¤
+				//í…ìŠ¤íŠ¸ í•„ë“œ ìœ„ì¹˜ ì„¤ì •
 				textfield[i].setLocation(65, 5 + (i * 40));
-				//ÅØ½ºÆ® ÇÊµå ÆùÆ® ¼³Á¤
+				//í…ìŠ¤íŠ¸ í•„ë“œ í°íŠ¸ ì„¤ì •
 				textfield[i].setFont(plainFont);
-				//ÅØ½ºÆ® ÇÊµå °¡¿îµ¥ Á¤·Ä
+				//í…ìŠ¤íŠ¸ í•„ë“œ ê°€ìš´ë° ì •ë ¬
 				textfield[i].setHorizontalAlignment(JLabel.CENTER);
-				//ÅØ½ºÆ® ÇÊµå º¸´õ ¼³Á¤
+				//í…ìŠ¤íŠ¸ í•„ë“œ ë³´ë” ì„¤ì •
 				textfield[i].setBorder(border1);
-				//ÅØ½ºÆ® ÇÊµå Ãß°¡
+				//í…ìŠ¤íŠ¸ í•„ë“œ ì¶”ê°€
 				getContentPane().add(textfield[i]);
 			}
 			
-			//¹öÆ° ±×·ì »ı¼º
+			//ë²„íŠ¼ ê·¸ë£¹ ìƒì„±
 			ButtonGroup bg = new ButtonGroup();
 			
-			//¶óµğ¿À ¹öÆ° °ø°£ È®º¸
+			//ë¼ë””ì˜¤ ë²„íŠ¼ ê³µê°„ í™•ë³´
 			JRadioButton[] radio = new JRadioButton[5];
 			for(int i = 0; i < 5; i++) {
-				//¶óµğ¿À »ı¼º
+				//ë¼ë””ì˜¤ ìƒì„±
 				radio[i] = new JRadioButton();
-				//¶óµğ¿À Å©±â ¼³Á¤
+				//ë¼ë””ì˜¤ í¬ê¸° ì„¤ì •
 				radio[i].setSize(55, 40);
-				//¶óµğ¿À À§Ä¡ ¼³Á¤
+				//ë¼ë””ì˜¤ ìœ„ì¹˜ ì„¤ì •
 				radio[i].setLocation(5 + (i * 55), 85);
 				bg.add(radio[i]);
-				//¶óµğ¿À Ãß°¡
+				//ë¼ë””ì˜¤ ì¶”ê°€
 				getContentPane().add(radio[i]);
 			}
-			//¶óµğ¿À ÅØ½ºÆ® ¼³Á¤
-			radio[0].setText("2¸í");
-			radio[1].setText("5¸í");
-			radio[2].setText("10¸í");
-			radio[3].setText("20¸í");
-			radio[4].setText("30¸í");
+			//ë¼ë””ì˜¤ í…ìŠ¤íŠ¸ ì„¤ì •
+			radio[0].setText("2ëª…");
+			radio[1].setText("5ëª…");
+			radio[2].setText("10ëª…");
+			radio[3].setText("20ëª…");
+			radio[4].setText("30ëª…");
 			
-			//ÃÊ±â ¼±ÅÃ
+			//ì´ˆê¸° ì„ íƒ
 			radio[1].setSelected(true);
 			
-			//¹öÆ° »ı¼º
-			RoundButton btn = new RoundButton("º¯°æ");
-			//¶óº§ Å©±â ¼³Á¤
+			//ë²„íŠ¼ ìƒì„±
+			RoundButton btn = new RoundButton("ë³€ê²½");
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			btn.setSize(80, 30);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			btn.setLocation(284, 90);
-			//¶óº§ ÆùÆ® ¼³Á¤
+			//ë¼ë²¨ í°íŠ¸ ì„¤ì •
 			btn.setFont(boldFont);
-			//¶óº§ °¡¿îµ¥ Á¤·Ä
+			//ë¼ë²¨ ê°€ìš´ë° ì •ë ¬
 			btn.setHorizontalAlignment(JLabel.CENTER);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(btn);
 			
-			//ÇÁ·¹ÀÓ º¸ÀÌ±â
+			//í”„ë ˆì„ ë³´ì´ê¸°
 			setVisible(true);
 			
 			btn.addActionListener(new ActionListener() {

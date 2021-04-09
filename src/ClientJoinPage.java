@@ -14,99 +14,99 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientJoinPage extends JFrame{
-	//ÆùÆ® »ı¼º
-	Font font = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-	//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+	Font font = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+	//í…Œë‘ë¦¬ ìƒì„±
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-	//º¼·ÏÇÑ ¹öÆ°
+	//ë³¼ë¡í•œ ë²„íŠ¼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
 	public ClientJoinPage() {
-		//ÇÁ·¹ÀÓ »çÀÌÁî ¼³Á¤
+		//í”„ë ˆì„ ì‚¬ì´ì¦ˆ ì„¤ì •
 		setSize(327, 540);
-		//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+		//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 		setTitle("GREEN Chat");
-		//·¹ÀÌ¾Æ¿ô ¼³Á¤
+		//ë ˆì´ì•„ì›ƒ ì„¤ì •
 		getContentPane().setLayout(null);
-		//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+		//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 		setLocationRelativeTo(null);
-		//Ã¢Å©±â º¯°æ ºÒ°¡
+		//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 		setResizable(false);
-		//x¹öÆ°½Ã Á¾·á
+		//xë²„íŠ¼ì‹œ ì¢…ë£Œ
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		//¶óº§ °ø°£ 4°³ È®º¸
+		//ë¼ë²¨ ê³µê°„ 4ê°œ í™•ë³´
 		JLabel lbl[] = new JLabel[9];
 		for(int i = 0; i < 9; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			lbl[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			lbl[i].setSize(110, 50);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			lbl[i].setLocation(0, i * 50);
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			lbl[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			lbl[i].setBackground(Color.LIGHT_GRAY);
-			//¶óº§ ÆùÆ® ¼³Á¤
+			//ë¼ë²¨ í°íŠ¸ ì„¤ì •
 			lbl[i].setFont(font);
-			//¶óº§ °¡¿îµ¥ Á¤·Ä
+			//ë¼ë²¨ ê°€ìš´ë° ì •ë ¬
 			lbl[i].setHorizontalAlignment(JLabel.CENTER);
-			//º¸´õ Ãß°¡
+			//ë³´ë” ì¶”ê°€
 			lbl[i].setBorder(border1);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(lbl[i]);
 		}
-		//¶óº§ ÅØ½ºÆ® ¼³Á¤
-		lbl[0].setText("¾ÆÀÌµğ");
-		lbl[1].setText("ºñ¹Ğ¹øÈ£");
-		lbl[2].setText("ºñ¹Ğ¹øÈ£ È®ÀÎ");
-		lbl[3].setText("ÀÌ¸§");
-		lbl[4].setText("´Ğ³×ÀÓ");
-		lbl[5].setText("¼ºº°");
-		lbl[6].setText("³ªÀÌ");
-		lbl[7].setText("ÇÚµåÆù ¹øÈ£");
-		lbl[8].setText("ÀÌ¸ŞÀÏ ÁÖ¼Ò");
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì„¤ì •
+		lbl[0].setText("ì•„ì´ë””");
+		lbl[1].setText("ë¹„ë°€ë²ˆí˜¸");
+		lbl[2].setText("ë¹„ë°€ë²ˆí˜¸ í™•ì¸");
+		lbl[3].setText("ì´ë¦„");
+		lbl[4].setText("ë‹‰ë„¤ì„");
+		lbl[5].setText("ì„±ë³„");
+		lbl[6].setText("ë‚˜ì´");
+		lbl[7].setText("í•¸ë“œí° ë²ˆí˜¸");
+		lbl[8].setText("ì´ë©”ì¼ ì£¼ì†Œ");
 		
-		//ÅØ½ºÆ® ÇÊµå »ı¼º
+		//í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 		JTextField[] textField = new JTextField[9];
 		for(int i = 0; i < 9; i++) {
-			//ÅØ½ºÆ® ÇÊµå »ı¼º
+			//í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 			textField[i] = new JTextField();
-			//ÅØ½ºÆ® ÇÊµå Å©±â ¼³Á¤
+			//í…ìŠ¤íŠ¸ í•„ë“œ í¬ê¸° ì„¤ì •
 			textField[i].setSize(200, 50);
-			//ÅØ½ºÆ® ÇÊµå À§Ä¡ ¼³Á¤
+			//í…ìŠ¤íŠ¸ í•„ë“œ ìœ„ì¹˜ ì„¤ì •
 			textField[i].setLocation(110 , 50 * i);
-			//ÅØ½ºÆ® ÇÊµå ÆùÆ® ¼³Á¤
+			//í…ìŠ¤íŠ¸ í•„ë“œ í°íŠ¸ ì„¤ì •
 			textField[i].setFont(font);
-			//ÅØ½ºÆ® ÇÊµå °¡¿îµ¥ Á¤·Ä
+			//í…ìŠ¤íŠ¸ í•„ë“œ ê°€ìš´ë° ì •ë ¬
 			textField[i].setHorizontalAlignment(JLabel.CENTER);
-			//º¸´õ Ãß°¡
+			//ë³´ë” ì¶”ê°€
 			textField[i].setBorder(border1);
-			//ÅØ½ºÆ® ÇÊµå Ãß°¡
+			//í…ìŠ¤íŠ¸ í•„ë“œ ì¶”ê°€
 			getContentPane().add(textField[i]);
 		}
 		
-		//¹öÆ° »ı¼º
+		//ë²„íŠ¼ ìƒì„±
 		JButton btn = new JButton();
-		//¹öÆ° Å©±â ¼³Á¤
+		//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 		btn.setSize(310, 50);
-		//¹öÆ° À§Ä¡ ¼³Á¤
+		//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 		btn.setLocation(0, 450);
-		//¹öÆ° ¹è°æ ¼³Á¤ °¡´É
+		//ë²„íŠ¼ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 		btn.setOpaque(true);
-		//¹öÆ° ¹è°æ»ö ¼³Á¤
+		//ë²„íŠ¼ ë°°ê²½ìƒ‰ ì„¤ì •
 		btn.setBackground(Color.LIGHT_GRAY);
-		//¹öÆ° ÆùÆ® ¼³Á¤
+		//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 		btn.setFont(font);
-		//¹öÆ° °¡¿îµ¥ Á¤·Ä
+		//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 		btn.setHorizontalAlignment(JLabel.CENTER);
-		//¹öÆ° Ãß°¡
+		//ë²„íŠ¼ ì¶”ê°€
 		getContentPane().add(btn);
-		//¹öÆ° ÅØ½ºÆ® ¼³Á¤
-		btn.setText("È¸¿ø°¡ÀÔ");
+		//ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
+		btn.setText("íšŒì›ê°€ì…");
 		
-		//ÇÁ·¹ÀÓ º¸ÀÌ°Ô ÇÏ±â
+		//í”„ë ˆì„ ë³´ì´ê²Œ í•˜ê¸°
 		setVisible(true);
 		
 		btn.addActionListener(new ActionListener() {

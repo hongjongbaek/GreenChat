@@ -7,147 +7,147 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientProfilePage extends JFrame {
-	//ÆùÆ® »ı¼º
-	Font boldFont = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-	Font plainFont = new Font("¸¼Àº °íµñ", Font.PLAIN, 12);
-	//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+	Font boldFont = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+	Font plainFont = new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 12);
+	//í…Œë‘ë¦¬ ìƒì„±
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-	//º¼·ÏÇÑ ¹öÆ°
+	//ë³¼ë¡í•œ ë²„íŠ¼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
 	public ClientProfilePage() {
-		//ÇÁ·¹ÀÓ »çÀÌÁî ¼³Á¤
+		//í”„ë ˆì„ ì‚¬ì´ì¦ˆ ì„¤ì •
 		setSize(395, 380);
-		//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+		//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 		setTitle("GREEN Chat");
-		//·¹ÀÌ¾Æ¿ô ¼³Á¤
+		//ë ˆì´ì•„ì›ƒ ì„¤ì •
 		getContentPane().setLayout(null);
-		//Ã¢Å©±â º¯°æ ºÒ°¡
+		//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 		setResizable(false);
-		//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+		//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 		setLocationRelativeTo(null);
 		
-		//»çÁø ¶óº§ »ı¼º
+		//ì‚¬ì§„ ë¼ë²¨ ìƒì„±
 		JLabel photo = new JLabel();
-		//¶óº§ Å©±â ¼³Á¤
+		//ë¼ë²¨ í¬ê¸° ì„¤ì •
 		photo.setSize(120, 160);
-		//¶óº§ À§Ä¡ ¼³Á¤
+		//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 		photo.setLocation(5, 5);
-		//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+		//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 		photo.setOpaque(true);
-		//¶óº§ ¹è°æ»ö ¼³Á¤
+		//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 		photo.setBackground(Color.WHITE);
-		//¹öÆ° ÆùÆ® ¼³Á¤
+		//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 		photo.setFont(boldFont);
-		//¹öÆ° °¡¿îµ¥ Á¤·Ä
+		//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 		photo.setHorizontalAlignment(JLabel.CENTER);
-		//¶óº§ ÅØ½ºÆ® Ãß°¡
-		photo.setText("»çÁø");
-		//¶óº§ Ãß°¡
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì¶”ê°€
+		photo.setText("ì‚¬ì§„");
+		//ë¼ë²¨ ì¶”ê°€
 		getContentPane().add(photo);
 		
-		//¶óº§ °ø°£ È®º¸
+		//ë¼ë²¨ ê³µê°„ í™•ë³´
 		JLabel[] inf = new JLabel[5];
 		for(int i = 0; i < 5; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			inf[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			inf[i].setSize(100, 32);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			inf[i].setLocation(125, 5 + (i * 32));
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			inf[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			inf[i].setBackground(Color.WHITE);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			inf[i].setFont(boldFont);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			inf[i].setHorizontalAlignment(JLabel.CENTER);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(inf[i]);
 		}
-		//¶óº§ ÅØ½ºÆ® Ãß°¡
-		inf[0].setText("¾ÆÀÌµğ");
-		inf[1].setText("´Ğ³×ÀÓ");
-		inf[2].setText("ÀÌ¸§");
-		inf[3].setText("¼ºº°");
-		inf[4].setText("³ªÀÌ");
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì¶”ê°€
+		inf[0].setText("ì•„ì´ë””");
+		inf[1].setText("ë‹‰ë„¤ì„");
+		inf[2].setText("ì´ë¦„");
+		inf[3].setText("ì„±ë³„");
+		inf[4].setText("ë‚˜ì´");
 		
-		//¶óº§ °ø°£ È®º¸
+		//ë¼ë²¨ ê³µê°„ í™•ë³´
 		JLabel[] infvalue = new JLabel[5];
 		for(int i = 0; i < 5; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			infvalue[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			infvalue[i].setSize(150, 32);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			infvalue[i].setLocation(225, 5 + (i * 32));
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			infvalue[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			infvalue[i].setBackground(Color.WHITE);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			infvalue[i].setFont(plainFont);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			infvalue[i].setHorizontalAlignment(JLabel.CENTER);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(infvalue[i]);
 		}
-		//¶óº§ ÅØ½ºÆ® Ãß°¡
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì¶”ê°€
 		infvalue[0].setText("-");
 		infvalue[1].setText("-");
 		infvalue[2].setText("-");
 		infvalue[3].setText("-");
 		infvalue[4].setText("-");
 		
-		//¶óº§ °ø°£ È®º¸
+		//ë¼ë²¨ ê³µê°„ í™•ë³´
 		JLabel[] adress = new JLabel[2];
 		for(int i = 0; i < 2; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			adress[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			adress[i].setSize(120, 80);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			adress[i].setLocation(5, 175 + (i * 80));
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			adress[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			adress[i].setBackground(Color.WHITE);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			adress[i].setFont(boldFont);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			adress[i].setHorizontalAlignment(JLabel.CENTER);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(adress[i]);
 		}
-		//¶óº§ ÅØ½ºÆ® Ãß°¡
-		adress[0].setText("ÀÌ¸ŞÀÏ");
-		adress[1].setText("ÀüÈ­¹øÈ£");
+		//ë¼ë²¨ í…ìŠ¤íŠ¸ ì¶”ê°€
+		adress[0].setText("ì´ë©”ì¼");
+		adress[1].setText("ì „í™”ë²ˆí˜¸");
 		
-		//¶óº§ °ø°£ È®º¸
+		//ë¼ë²¨ ê³µê°„ í™•ë³´
 		JLabel[] adressValue = new JLabel[2];
 		for(int i = 0; i < 2; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			adressValue[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			adressValue[i].setSize(250, 80);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			adressValue[i].setLocation(125, 175 + (i * 80));
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			adressValue[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			adressValue[i].setBackground(Color.WHITE);
-			//¶óº§ ÅØ½ºÆ® Ãß°¡
+			//ë¼ë²¨ í…ìŠ¤íŠ¸ ì¶”ê°€
 			adressValue[i].setText("-");
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			adressValue[i].setFont(boldFont);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			adressValue[i].setHorizontalAlignment(JLabel.CENTER);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(adressValue[i]);
 		}
 		
-		//ÇÁ·¹ÀÓ º¸ÀÌ°Ô ÇÏ±â
+		//í”„ë ˆì„ ë³´ì´ê²Œ í•˜ê¸°
 		setVisible(true);
 		
 	}

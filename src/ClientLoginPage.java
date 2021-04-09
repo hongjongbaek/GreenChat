@@ -14,107 +14,107 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
 public class ClientLoginPage extends JFrame {
-	//ÆùÆ® »ı¼º
-	Font font = new Font("¸¼Àº °íµñ", Font.BOLD, 16);
-	//Å×µÎ¸® »ı¼º
+	//í°íŠ¸ ìƒì„±
+	Font font = new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 16);
+	//í…Œë‘ë¦¬ ìƒì„±
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
-	//º¼·ÏÇÑ ¹öÆ°
+	//ë³¼ë¡í•œ ë²„íŠ¼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
 	public ClientLoginPage() {
-		//ÇÁ·¹ÀÓ »çÀÌÁî ¼³Á¤
+		//í”„ë ˆì„ ì‚¬ì´ì¦ˆ ì„¤ì •
 		setSize(277, 190);
-		//ÇÁ·¹ÀÓ ÀÌ¸§ ÁöÁ¤
+		//í”„ë ˆì„ ì´ë¦„ ì§€ì •
 		setTitle("GREEN Chat");
-		//·¹ÀÌ¾Æ¿ô ¼³Á¤
+		//ë ˆì´ì•„ì›ƒ ì„¤ì •
 		getContentPane().setLayout(null);
-		//Ã¢Å©±â º¯°æ ºÒ°¡
+		//ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 		setResizable(false);
-		//Ã¢ °¡¿îµ¥ ¶ç¿ì±â
+		//ì°½ ê°€ìš´ë° ë„ìš°ê¸°
 		setLocationRelativeTo(null);
-		//x¹öÆ°½Ã Á¾·á
+		//xë²„íŠ¼ì‹œ ì¢…ë£Œ
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		//¶óº§ °ø°£ 2°³ È®º¸
+		//ë¼ë²¨ ê³µê°„ 2ê°œ í™•ë³´
 		JLabel lbl[] = new JLabel[2];
 		for(int i = 0; i < 2; i++) {
-			//¶óº§ »ı¼º
+			//ë¼ë²¨ ìƒì„±
 			lbl[i] = new JLabel();
-			//¶óº§ Å©±â ¼³Á¤
+			//ë¼ë²¨ í¬ê¸° ì„¤ì •
 			lbl[i].setSize(60, 50);
-			//¶óº§ À§Ä¡ ¼³Á¤
+			//ë¼ë²¨ ìœ„ì¹˜ ì„¤ì •
 			lbl[i].setLocation(0, 0 + (i * 50));
-			//¶óº§ ¹è°æ ¼³Á¤ °¡´É
+			//ë¼ë²¨ ë°°ê²½ ì„¤ì • ê°€ëŠ¥
 			lbl[i].setOpaque(true);
-			//¶óº§ ¹è°æ»ö ¼³Á¤
+			//ë¼ë²¨ ë°°ê²½ìƒ‰ ì„¤ì •
 			lbl[i].setBackground(Color.LIGHT_GRAY);
-			//¶óº§ ÆùÆ® ¼³Á¤
+			//ë¼ë²¨ í°íŠ¸ ì„¤ì •
 			lbl[i].setFont(font);
-			//¶óº§ °¡¿îµ¥ Á¤·Ä
+			//ë¼ë²¨ ê°€ìš´ë° ì •ë ¬
 			lbl[i].setHorizontalAlignment(JLabel.CENTER);
-			//º¸´õ Ãß°¡
+			//ë³´ë” ì¶”ê°€
 			lbl[i].setBorder(border1);
-			//¶óº§ Ãß°¡
+			//ë¼ë²¨ ì¶”ê°€
 			getContentPane().add(lbl[i]);
 		}
 		lbl[0].setText("ID");
 		lbl[1].setText("PW");
 		
-		//id ÅØ½ºÆ® ÇÊµå »ı¼º
+		//id í…ìŠ¤íŠ¸ í•„ë“œ ìƒì„±
 		JTextField idField = new JTextField();
-		//id ÅØ½ºÆ® ÇÊµå Å©±â ¼³Á¤
+		//id í…ìŠ¤íŠ¸ í•„ë“œ í¬ê¸° ì„¤ì •
 		idField.setSize(200, 50);
-		//id ÅØ½ºÆ® ÇÊµå À§Ä¡ ¼³Á¤
+		//id í…ìŠ¤íŠ¸ í•„ë“œ ìœ„ì¹˜ ì„¤ì •
 		idField.setLocation(60, 0);
-		//id ÅØ½ºÆ® ÇÊµå ÆùÆ® ¼³Á¤
+		//id í…ìŠ¤íŠ¸ í•„ë“œ í°íŠ¸ ì„¤ì •
 		idField.setFont(font);
-		//id ÅØ½ºÆ® ÇÊµå °¡¿îµ¥ Á¤·Ä
+		//id í…ìŠ¤íŠ¸ í•„ë“œ ê°€ìš´ë° ì •ë ¬
 		idField.setHorizontalAlignment(JLabel.CENTER);
-		//º¸´õ Ãß°¡
+		//ë³´ë” ì¶”ê°€
 		idField.setBorder(border1);
-		//id ÅØ½ºÆ® ÇÊµå Ãß°¡
+		//id í…ìŠ¤íŠ¸ í•„ë“œ ì¶”ê°€
 		getContentPane().add(idField);
 		
-		//password ÆĞ½º¿öµå ÇÊµå »ı¼º
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ ìƒì„±
 		JPasswordField passwordField = new JPasswordField();
-		//password ÆĞ½º¿öµå ÇÊµå ¼³Á¤
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ ì„¤ì •
 		passwordField.setSize(200, 50);
-		//password ÆĞ½º¿öµå ÇÊµå ¼³Á¤
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ ì„¤ì •
 		passwordField.setLocation(60, 50);
-		//password ÆĞ½º¿öµå ÇÊµå ÆùÆ® ¼³Á¤
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ í°íŠ¸ ì„¤ì •
 		passwordField.setFont(font);
-		//password ÆĞ½º¿öµå ÇÊµå °¡¿îµ¥ Á¤·Ä
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ ê°€ìš´ë° ì •ë ¬
 		passwordField.setHorizontalAlignment(JLabel.CENTER);
-		//º¸´õ Ãß°¡
+		//ë³´ë” ì¶”ê°€
 		passwordField.setBorder(border1);
-		//password ÆĞ½º¿öµå ÇÊµå Ãß°¡
+		//password íŒ¨ìŠ¤ì›Œë“œ í•„ë“œ ì¶”ê°€
 		getContentPane().add(passwordField);
 		
-		//¹öÆ° °ø°£ 2°³ È®º¸
+		//ë²„íŠ¼ ê³µê°„ 2ê°œ í™•ë³´
 		RoundButton btn[] = new RoundButton[2];
 		for(int i = 0; i < 2; i++) {
-			//¹öÆ° »ı¼º
+			//ë²„íŠ¼ ìƒì„±
 			btn[i] = new RoundButton();
-			//¹öÆ° Å©±â ¼³Á¤
+			//ë²„íŠ¼ í¬ê¸° ì„¤ì •
 			btn[i].setSize(126, 46);
-			//¹öÆ° À§Ä¡ ¼³Á¤
+			//ë²„íŠ¼ ìœ„ì¹˜ ì„¤ì •
 			btn[i].setLocation(2 + (i * 130), 102);
-			//¹öÆ° ÆùÆ® ¼³Á¤
+			//ë²„íŠ¼ í°íŠ¸ ì„¤ì •
 			btn[i].setFont(font);
-			//¹öÆ° °¡¿îµ¥ Á¤·Ä
+			//ë²„íŠ¼ ê°€ìš´ë° ì •ë ¬
 			btn[i].setHorizontalAlignment(JLabel.CENTER);
-			//º¸´õ Ãß°¡
+			//ë³´ë” ì¶”ê°€
 			btn[i].setBorder(border2);
-			//¹öÆ° Ãß°¡
+			//ë²„íŠ¼ ì¶”ê°€
 			getContentPane().add(btn[i]);
 		}
-		btn[0].setText("·Î±×ÀÎ");
-		btn[1].setText("È¸¿ø°¡ÀÔ");
+		btn[0].setText("ë¡œê·¸ì¸");
+		btn[1].setText("íšŒì›ê°€ì…");
 		
-		//ÇÁ·¹ÀÓ º¸ÀÌ°Ô ÇÏ±â
+		//í”„ë ˆì„ ë³´ì´ê²Œ í•˜ê¸°
 		setVisible(true);
 		
-		//·Î±×ÀÎ ¾×¼Ç ¸®½º³Ê
+		//ë¡œê·¸ì¸ ì•¡ì…˜ ë¦¬ìŠ¤ë„ˆ
 		btn[0].addActionListener(new ActionListener() {
 			
 			@Override
@@ -124,7 +124,7 @@ public class ClientLoginPage extends JFrame {
 			}
 		});
 		
-		//È¸¿ø°¡ÀÔ ¾×¼Ç¸®½º³Ê
+		//íšŒì›ê°€ì… ì•¡ì…˜ë¦¬ìŠ¤ë„ˆ
 		btn[1].addActionListener(new ActionListener() {
 			
 			@Override

@@ -26,10 +26,10 @@ public class Server {
 	public static void main(String[] args) {
 		try (ServerSocket server = new ServerSocket(PORT)) {
 			while (true) {
-				System.out.println("Å¬¶óÀÌ¾ğÆ®¸¦ ±â´Ù¸®´Â Áß...");
+				System.out.println("í´ë¼ì´ì–¸íŠ¸ë¥¼ ê¸°ë‹¤ë¦¬ëŠ” ì¤‘...");
 				Socket socket = server.accept();
 				
-				System.out.println("Å¬¶óÀÌ¾ğÆ® Á¢¼Ó Áß...");
+				System.out.println("í´ë¼ì´ì–¸íŠ¸ ì ‘ì† ì¤‘...");
 //				Socket client = server.accept();
 				ChatThread chatThread = new ChatThread(socket);
 				chatThread.start();
@@ -37,7 +37,7 @@ public class Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			System.out.println("Å¬¶óÀÌ¾ğÆ® Á¢¼Ó Á¾·á...");
+			System.out.println("í´ë¼ì´ì–¸íŠ¸ ì ‘ì† ì¢…ë£Œ...");
 		}
 	}
 }
