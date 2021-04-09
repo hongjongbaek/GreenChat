@@ -7,9 +7,12 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.co.greenart.UserDAO;
+
 public class Server {
 	private static final int PORT = 1239;
 	private static List<PrintWriter> list = new ArrayList<>();
+	static UserDAO dao = new UserDAO();
 	
 	public synchronized static void addSocket(PrintWriter socket) {
 		list.add(socket);
