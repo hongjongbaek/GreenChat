@@ -294,15 +294,15 @@ public class UserDAO {
 				String user_name = rs.getString("user_name");
 				String user_gender = rs.getString("user_gender");
 				int user_age = rs.getInt("user_age");
-				String user_phnum = rs.getString("user_phnum");
 				String user_eamil = rs.getString("user_email");
+				String user_phnum = rs.getString("user_phnum");
 				list.add(user_id);
 				list.add(user_nickname);
 				list.add(user_name);
 				list.add(user_gender);
 				list.add(user_age + "");
-				list.add(user_phnum);
 				list.add(user_eamil);
+				list.add(user_phnum);
 				
 			}
 			return list;
