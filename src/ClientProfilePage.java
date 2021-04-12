@@ -1,10 +1,14 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
+
+import kr.co.greenart.User;
+import kr.co.greenart.UserDAO;
 
 public class ClientProfilePage extends JFrame {
 	//폰트 생성
@@ -15,7 +19,8 @@ public class ClientProfilePage extends JFrame {
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
-	public ClientProfilePage() {
+	public ClientProfilePage(String id) {
+		List<String> profile = UserDAO.profile(id);
 		//프레임 사이즈 설정
 		setSize(395, 380);
 		//프레임 이름 지정
@@ -102,11 +107,12 @@ public class ClientProfilePage extends JFrame {
 			getContentPane().add(infvalue[i]);
 		}
 		//라벨 텍스트 추가
-		infvalue[0].setText("-");
-		infvalue[1].setText("-");
-		infvalue[2].setText("-");
-		infvalue[3].setText("-");
-		infvalue[4].setText("-");
+		
+		infvalue[0].setText(profile.get(0));
+		infvalue[1].setText(profile.get(1));
+		infvalue[2].setText(profile.get(2));
+		infvalue[3].setText(profile.get(3));
+		infvalue[4].setText(profile.get(4));
 		
 		//라벨 공간 확보
 		JLabel[] adress = new JLabel[2];
@@ -158,7 +164,8 @@ public class ClientProfilePage extends JFrame {
 			//라벨 추가
 			getContentPane().add(adressValue[i]);
 		}
-		
+		adressValue[0].setText(profile.get(5));
+		adressValue[1].setText(profile.get(6));
 		//프레임 보이게 하기
 		setVisible(true);
 		

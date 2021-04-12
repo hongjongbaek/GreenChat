@@ -13,7 +13,11 @@ import javax.swing.border.EtchedBorder;
 
 import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
 
+import kr.co.greenart.User;
+import kr.co.greenart.UserDAO;
+
 public class ClientLobbyPage extends JFrame{
+	ClientLoginPage login = new ClientLoginPage();
 	//폰트 생성
 	Font font = new Font("맑은 고딕", Font.BOLD, 16);
 	Font lebelFont = new Font("맑은 고딕", Font.PLAIN, 12);
@@ -213,7 +217,9 @@ public class ClientLobbyPage extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ClientProfilePage cpfp = new ClientProfilePage();
+				String id = login.getId();
+				ClientProfilePage cpfp = new ClientProfilePage(id);
+				
 			}
 		});
 		
