@@ -157,6 +157,7 @@ public class UserDAO {
 		}
 		return -1; 
 	}
+	
 	// id 중복체크
 	public static int idchk(String id) {
 		Connection conn = null;
@@ -186,7 +187,7 @@ public class UserDAO {
 		}
 		return 1;
 	}
-//email 중복체크
+	// email 중복체크
 	public static int emailchk(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -215,7 +216,7 @@ public class UserDAO {
 		}
 		return 1;
 	}
-//nickname 중복체크
+	// nickname 중복체크
 	public static int nicknamechk(String nickname) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -244,7 +245,7 @@ public class UserDAO {
 		}
 		return 1;
 	}
-//phnum 중복체크
+	// phnum 중복체크
 	public static int phnumchk(String phnum) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -272,5 +273,46 @@ public class UserDAO {
 			MyConnectionProvider.closeConnection(conn);
 		}
 		return 1;
+	}
+	
+	// 프로필 입력
+	public static List<String> profile(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM user_table WHERE user_id = ?";
+		List<String> list = new ArrayList<>();
+		try {
+			conn = MyConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				String user_id = rs.getString("user_id");
+				String user_nickname = rs.getString("user_nickname");
+				String user_name = rs.getString("user_name");
+				String user_gender = rs.getString("user_gender");
+				int user_age = rs.getInt("user_age");
+				String user_phnum = rs.getString("user_phnum");
+				String user_eamil = rs.getString("user_email");
+				list.add(user_id);
+				list.add(user_nickname);
+				list.add(user_name);
+				list.add(user_gender);
+				list.add(user_age + "");
+				list.add(user_phnum);
+				list.add(user_eamil);
+				
+			}
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MyConnectionProvider.closeRS(rs);
+			MyConnectionProvider.closeStmt(pstmt);
+			MyConnectionProvider.closeConnection(conn);
+		}
+		return list;
 	}
 }
