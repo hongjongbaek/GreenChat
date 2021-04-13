@@ -301,8 +301,8 @@ public class UserDAO {
 				list.add(user_name);
 				list.add(user_gender);
 				list.add(user_age + "");
-				list.add(user_phnum);
 				list.add(user_eamil);
+				list.add(user_phnum);
 				
 			}
 			return list;

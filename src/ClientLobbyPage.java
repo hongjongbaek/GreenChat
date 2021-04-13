@@ -11,8 +11,6 @@ import javax.swing.JTextArea;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
-import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
-
 import kr.co.greenart.User;
 import kr.co.greenart.UserDAO;
 
@@ -153,57 +151,25 @@ public class ClientLobbyPage extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				switch (textTimercount) {
-				case 0:
-					text1.setText("정지욱");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 0 : text1.setText("정지욱");
 					break;
-				case 1:
-					text1.setText("김석현");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 1 : text1.setText("김석현");
 					break;
-				case 2:
-					text1.setText("배원석");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 2 : text1.setText("배원석");
 					break;
-				case 3:
-					text1.setText("남익희");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 3 : text1.setText("남익희");
 					break;
-				case 4:
-					text1.setText("홍종백");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 4 : text1.setText("홍종백");
 					break;
-				case 5:
-					text1.setText("이무현");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 5 : text1.setText("이무현");
 					break;
-				case 6:
-					text1.setText("1조");
-					textTimercount++;
-					if(textTimercount == 7) {
-						textTimercount = 0;
-					}
+				case 6: text1.setText("1조");
 					break;
 				}
-				
+				textTimercount++;
+				if(textTimercount == 7) {
+					textTimercount = 0;
+				}
         	}
         });
 		

@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -172,6 +173,16 @@ public class ClientChattingRoomPage extends JFrame{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//파일 추저 생성
+				JFileChooser filechooser = new JFileChooser();
+				//파일 추저 정의
+				int chooserValue = filechooser.showSaveDialog(null);
+				//파일 경로 저장
+				String path = "";
+				path = filechooser.getSelectedFile().getPath();
+				if(path != "") {
+					
+				}
 				
 			}
 		});

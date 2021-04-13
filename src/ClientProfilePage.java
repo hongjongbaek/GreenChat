@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
@@ -35,7 +37,7 @@ public class ClientProfilePage extends JFrame {
 		setLocationRelativeTo(null);
 		
 		//사진 라벨 생성
-		JLabel photo = new JLabel();
+		JButton photo = new JButton();
 		//라벨 크기 설정
 		photo.setSize(120, 160);
 		//라벨 위치 설정
@@ -51,7 +53,8 @@ public class ClientProfilePage extends JFrame {
 		//라벨 보더 설정
 		photo.setBorder(border1);
 		//라벨 텍스트 추가
-		photo.setText("사진");
+		//photo.setText("사진");
+		photo.setIcon(new ImageIcon("./src/testphoto.jpg"));
 		//라벨 추가
 		getContentPane().add(photo);
 		
