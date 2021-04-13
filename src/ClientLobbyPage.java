@@ -17,7 +17,6 @@ import kr.co.greenart.User;
 import kr.co.greenart.UserDAO;
 
 public class ClientLobbyPage extends JFrame{
-	ClientLoginPage login = new ClientLoginPage();
 	//폰트 생성
 	Font font = new Font("맑은 고딕", Font.BOLD, 16);
 	Font lebelFont = new Font("맑은 고딕", Font.PLAIN, 12);
@@ -27,7 +26,7 @@ public class ClientLobbyPage extends JFrame{
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	//타이머 제어 인수
 	int textTimercount = 0;
-	public ClientLobbyPage() {
+	public ClientLobbyPage(String id) {
 		//프레임 크기 지정
 		setSize(565, 382);
 		//프레임 이름 지정
@@ -217,7 +216,6 @@ public class ClientLobbyPage extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String id = login.getId();
 				ClientProfilePage cpfp = new ClientProfilePage(id);
 				
 			}
