@@ -1,10 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -16,23 +15,16 @@ import javax.swing.border.EtchedBorder;
 import kr.co.greenart.UserDAO;
 
 public class ClientLoginPage extends JFrame {
-	private static String id;
-
-	public synchronized String getId() {
-		return id;
-	}
-
-	public synchronized void setId(String id) {
-		ClientLoginPage.id = id;
-	}
-
+	
 	// 폰트 생성
 	Font font = new Font("맑은 고딕", Font.BOLD, 16);
 	// 테두리 생성
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
 	// 볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
-
+	
+	// id 텍스트 필드 생성
+	JTextField idField;
 	public ClientLoginPage() {
 		// 프레임 사이즈 설정
 		setSize(277, 190);
@@ -74,8 +66,8 @@ public class ClientLoginPage extends JFrame {
 		lbl[0].setText("ID");
 		lbl[1].setText("PW");
 
-		// id 텍스트 필드 생성
-		JTextField idField = new JTextField();
+		
+		idField = new JTextField();
 		// id 텍스트 필드 크기 설정
 		idField.setSize(200, 50);
 		// id 텍스트 필드 위치 설정
@@ -133,12 +125,11 @@ public class ClientLoginPage extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				id = idField.getText();
 				int dao = UserDAO.login(idField.getText(), new String(passwordField.getPassword()));
 				if (dao != 1) {
 					JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호가 일치하지 않습니다.");
 				} else {
-					ClientLobbyPage clp = new ClientLobbyPage();
+					ClientLobbyPage clp = new ClientLobbyPage(idField.getText());
 					dispose();
 				}
 			}

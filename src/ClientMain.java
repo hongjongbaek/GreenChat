@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
  
 public class ClientMain {
 	private static final int PORT = 1239;
@@ -11,17 +10,15 @@ public class ClientMain {
 		Socket socket = null;
 		try {
 			socket = new Socket("localhost", PORT);
-			Scanner scanner = new Scanner(System.in);
 			
 			System.out.println("사용자 들어가욧!");
-			String chk = scanner.nextLine();
-			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
+				
 				socket.close();
 			} catch (IOException e) {
 				e.printStackTrace();
