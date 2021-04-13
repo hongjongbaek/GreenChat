@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 
+import kr.co.greenart.RoomDAO;
+
 public class ClientMakeRoom extends JFrame {
 	//폰트 생성
 	Font boldFont = new Font("맑은 고딕", Font.BOLD, 16);
@@ -21,8 +23,10 @@ public class ClientMakeRoom extends JFrame {
 	EtchedBorder border1 = new EtchedBorder(EtchedBorder.RAISED);
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
-		
-	public ClientMakeRoom() {
+	
+	private String room_peoplenum;
+	
+	public ClientMakeRoom(RoundButton_White[] centerBtn, String id) {
 		//프레임 크기 지정
 		setSize(384, 165);
 		//프레임 이름 지정
@@ -108,6 +112,8 @@ public class ClientMakeRoom extends JFrame {
 		radio[3].setText("20명");
 		radio[4].setText("30명");
 		
+		
+		
 		//초기 선택
 		radio[1].setSelected(true);
 		
@@ -131,8 +137,22 @@ public class ClientMakeRoom extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String text = null;
+				for(int i = 0 ; i < 5; i++) {
+					if(radio[i].isSelected()) {
+						 text = radio[i].getText();
+					}
+				}
+				room_peoplenum = text.replace("명", "");
+				
+				RoomDAO.roomadd(textfield[0].getText(),room_peoplenum,
+						textfield[1].getText(),id);
+				
+				centerBtn[0].setText(textfield[0].getText() + "0" + "/" + room_peoplenum);
+				System.out.println("채팅방 생성!");
 				dispose();
 			}
 		});
+		
 	}
 }

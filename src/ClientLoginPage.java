@@ -138,7 +138,7 @@ public class ClientLoginPage extends JFrame {
 				if (dao != 1) {
 					JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호가 일치하지 않습니다.");
 				} else {
-					ClientLobbyPage clp = new ClientLobbyPage();
+					ClientLobbyPage clp = new ClientLobbyPage(idField.getText());
 					dispose();
 				}
 			}

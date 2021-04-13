@@ -27,7 +27,7 @@ public class ClientLobbyPage extends JFrame{
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	//타이머 제어 인수
 	int textTimercount = 0;
-	public ClientLobbyPage() {
+	public ClientLobbyPage(String id) {
 		//프레임 크기 지정
 		setSize(565, 382);
 		//프레임 이름 지정
@@ -228,7 +228,7 @@ public class ClientLobbyPage extends JFrame{
 					
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ClientMakeRoom cmp = new ClientMakeRoom();
+				ClientMakeRoom cmp = new ClientMakeRoom(centerBtn, id);
 			}
 		});
 		

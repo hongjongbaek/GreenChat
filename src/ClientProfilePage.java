@@ -164,8 +164,8 @@ public class ClientProfilePage extends JFrame {
 			//라벨 추가
 			getContentPane().add(adressValue[i]);
 		}
-		adressValue[0].setText(profile.get(5));
-		adressValue[1].setText(profile.get(6));
+		adressValue[0].setText(profile.get(6));
+		adressValue[1].setText(profile.get(5));
 		//프레임 보이게 하기
 		setVisible(true);
 		

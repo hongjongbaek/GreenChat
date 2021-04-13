@@ -29,6 +29,8 @@ public class ClientJoinPage extends JFrame{
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
+	private String gender = null;
+	
 	public ClientJoinPage() {
 		//프레임 사이즈 설정
 		setSize(327, 540);
@@ -163,33 +165,52 @@ public class ClientJoinPage extends JFrame{
 		btn.setText("회원가입");
 		
 		//프레임 보이게 하기
-setVisible(true);
+		setVisible(true);
 		
 		btn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				boolean isNotOK = true;
 				
 					if (UserDAO.idchk(textField[0].getText()) == -1) {
 						JOptionPane.showMessageDialog(null, "아이디 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
 					} else if (UserDAO.nicknamechk(textField[4].getText()) == -1) {
 						JOptionPane.showMessageDialog(null, "닉네임 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
-					} else if (UserDAO.phnumchk(textField[7].getText()) == -1) {
+					} else if (UserDAO.phnumchk(textField[6].getText()) == -1) {
 						JOptionPane.showMessageDialog(null, "휴대폰번호 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
-					} else if (UserDAO.emailchk(textField[8].getText()) == -1) {
+					} else if (UserDAO.emailchk(textField[7].getText()) == -1) {
 						JOptionPane.showMessageDialog(null, "이메일 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
-					} 
-					else {
+					} else if (textField[0].getText() == null) {
+						JOptionPane.showMessageDialog(null, "아이디를 입력해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (!textField[1].getText().equals(textField[2].getText())) {
+						JOptionPane.showMessageDialog(null, "비밀번호를 확인해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (textField[3].getText() == null) {
+						JOptionPane.showMessageDialog(null, "이메일 중복!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (textField[4].getText() == null) {
+						JOptionPane.showMessageDialog(null, "닉네임을 입력해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (radio[0].isSelected() == false && radio[1].isSelected() == false) {
+						JOptionPane.showMessageDialog(null, "성별을 확인해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (textField[5].getText() == null) {
+						JOptionPane.showMessageDialog(null, "나이를 입력해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (textField[6].getText() == null) {
+						JOptionPane.showMessageDialog(null, "핸드폰 번호를 입력해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else if (textField[7].getText() == null) {
+						JOptionPane.showMessageDialog(null, "이메일 주소를 입력해주세요!", "경고!", JOptionPane.WARNING_MESSAGE);
+					} else {
 						try {
+							if(radio[0].isSelected() == true) {
+								gender = "남자";
+							} else {
+								gender = "여자";
+							}
 							UserDAO.add(textField[0].getText(), // 아이디
 									textField[1].getText(), // 비밀번호
 									textField[3].getText(),	// 이름
 									textField[4].getText(), // 닉네
-									textField[5].getText(), // 성별
-									Integer.parseInt(textField[6].getText()), // 나이
-									textField[7].getText(), // 핸드폰번호
-									textField[8].getText()); // 이메일주소
+									gender, // 성별
+									Integer.parseInt(textField[5].getText()), // 나이
+									textField[6].getText(), // 핸드폰번호
+									textField[7].getText()); // 이메일주소
 							
 									System.out.println("회원가입 완료ㅗ");
 									ClientLoginPage clp = new ClientLoginPage();
@@ -202,7 +223,6 @@ setVisible(true);
 								e2.printStackTrace();
 							}
 						}
-					
 			}
 		});
 	}
