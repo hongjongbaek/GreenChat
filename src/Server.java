@@ -1,10 +1,17 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.co.greenart.MyConnectionProvider;
 import kr.co.greenart.UserDAO;
 
 public class Server {
@@ -31,22 +38,34 @@ public class Server {
       list.remove(socket);
    }
    public static void main(String[] args) {
+	  Connection conn = null;
+	  PreparedStatement pstmt = null;
+	  conn = MyConnectionProvider.getConnection();
+	   
       try (ServerSocket server = new ServerSocket(PORT)) {
-         while (true) {
-            System.out.println("클라이언트를 기다리는 중...");
-            Socket socket = server.accept();
-            
-            //여기서부터 수정임
-            memberAmount++;
-            pageOn.add(0);
-            //여기까지가 수정임
-            
-            System.out.println("클라이언트 접속 중...");
-            System.out.println(memberAmount);
+    	  
+        while (true) {
+			System.out.println("클라이언트를 기다리는 중...");
+			Socket socket = server.accept();
+			ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+
+			//여기서부터 수정임
+			memberAmount++;
+			pageOn.add(0);
+			
+			pageOn.set(0, 2);
+			
+			//여기까지가 수정임
+			
+			System.out.println("클라이언트 접속 중...");
+			System.out.println(memberAmount);
          }
       } catch (IOException e) {
          e.printStackTrace();
       } finally {
+    	 MyConnectionProvider.closeStmt(pstmt);
+    	 MyConnectionProvider.closeConnection(conn);
          System.out.println("서버 종료");
       }
    }
