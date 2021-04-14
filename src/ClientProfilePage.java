@@ -1,10 +1,14 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
+
+import kr.co.greenart.User;
+import kr.co.greenart.UserDAO;
 
 public class ClientProfilePage extends JFrame {
 	//폰트 생성
@@ -15,13 +19,16 @@ public class ClientProfilePage extends JFrame {
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	
-	public ClientProfilePage() {
+	public ClientProfilePage(String id) {
+		List<String> profile = UserDAO.profile(id);
 		//프레임 사이즈 설정
 		setSize(395, 380);
 		//프레임 이름 지정
 		setTitle("GREEN Chat");
 		//레이아웃 설정
 		getContentPane().setLayout(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창크기 변경 불가
 		setResizable(false);
 		//창 가운데 띄우기
@@ -41,6 +48,8 @@ public class ClientProfilePage extends JFrame {
 		photo.setFont(boldFont);
 		//버튼 가운데 정렬
 		photo.setHorizontalAlignment(JLabel.CENTER);
+		//라벨 보더 설정
+		photo.setBorder(border1);
 		//라벨 텍스트 추가
 		photo.setText("사진");
 		//라벨 추가
@@ -63,6 +72,8 @@ public class ClientProfilePage extends JFrame {
 			inf[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			inf[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			inf[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(inf[i]);
 		}
@@ -90,15 +101,18 @@ public class ClientProfilePage extends JFrame {
 			infvalue[i].setFont(plainFont);
 			//버튼 가운데 정렬
 			infvalue[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			infvalue[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(infvalue[i]);
 		}
 		//라벨 텍스트 추가
-		infvalue[0].setText("-");
-		infvalue[1].setText("-");
-		infvalue[2].setText("-");
-		infvalue[3].setText("-");
-		infvalue[4].setText("-");
+		
+		infvalue[0].setText(profile.get(0));
+		infvalue[1].setText(profile.get(1));
+		infvalue[2].setText(profile.get(2));
+		infvalue[3].setText(profile.get(3));
+		infvalue[4].setText(profile.get(4));
 		
 		//라벨 공간 확보
 		JLabel[] adress = new JLabel[2];
@@ -117,6 +131,8 @@ public class ClientProfilePage extends JFrame {
 			adress[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			adress[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			adress[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(adress[i]);
 		}
@@ -143,10 +159,13 @@ public class ClientProfilePage extends JFrame {
 			adressValue[i].setFont(boldFont);
 			//버튼 가운데 정렬
 			adressValue[i].setHorizontalAlignment(JLabel.CENTER);
+			//버튼 보더 설정
+			adressValue[i].setBorder(border1);
 			//라벨 추가
 			getContentPane().add(adressValue[i]);
 		}
-		
+		adressValue[0].setText(profile.get(5));
+		adressValue[1].setText(profile.get(6));
 		//프레임 보이게 하기
 		setVisible(true);
 		

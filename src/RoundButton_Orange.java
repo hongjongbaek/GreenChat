@@ -19,17 +19,17 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class RoundButton extends JButton {
-    public RoundButton() { super(); decorate(); } 
-    public RoundButton(String text) { super(text); decorate(); } 
-    public RoundButton(Action action) { super(action); decorate(); } 
-    public RoundButton(Icon icon) { super(icon); decorate(); } 
-    public RoundButton(String text, Icon icon) { super(text, icon); decorate(); } 
+public class RoundButton_Orange extends JButton {
+    public RoundButton_Orange() { super(); decorate(); } 
+    public RoundButton_Orange(String text) { super(text); decorate(); } 
+    public RoundButton_Orange(Action action) { super(action); decorate(); } 
+    public RoundButton_Orange(Icon icon) { super(icon); decorate(); } 
+    public RoundButton_Orange(String text, Icon icon) { super(text, icon); decorate(); } 
     protected void decorate() { setBorderPainted(false); setOpaque(false); }
     @Override 
     protected void paintComponent(Graphics g) {
-       Color c = new Color(100,100,100); //배경색 결정
-       Color o = new Color(255,255,255); //글자색 결정
+       Color c = new Color(255,239,180); //배경색 결정
+       Color o = new Color(100,100,100); //글자색 결정
        
        int width = getWidth(); 
        int height = getHeight(); 

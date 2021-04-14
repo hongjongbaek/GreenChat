@@ -13,7 +13,19 @@ public class User {
 	public User() {
 		super();
 	}
-
+	
+	public User(String id,  String name, String nickName, String gender, int age, String phoneNumber,
+			String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.nickName = nickName;
+		this.gender = gender;
+		this.age = age;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+	
 	public User(String id, String password, String name, String nickName, String gender, int age, String phoneNumber,
 			String email) {
 		super();

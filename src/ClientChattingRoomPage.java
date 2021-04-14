@@ -21,15 +21,15 @@ public class ClientChattingRoomPage extends JFrame{
 	//볼록한 버튼
 	BevelBorder border2 = new BevelBorder(BevelBorder.RAISED);
 	//테이블 헤더 생성
-	String[] head = {"닉네임", "이름", "성별", "나이"};
+	String[] head = {"닉네임", "성별"};
 	//테이블 바디 생성
 	String[][] body = 
-		{{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""},
-		{"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}, {"", "", "", ""}};
+		{{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",},
+		{"", ""}, {"", ""}, {"", ""}, {"", ""}, {"", "",}};
 	//참가자 버튼 확인
 	boolean memberCheck = false;
 	
@@ -42,6 +42,8 @@ public class ClientChattingRoomPage extends JFrame{
 		getContentPane().setLayout(null);
 		//창 가운데 띄우기
 		setLocationRelativeTo(null);
+		//배경색 설정
+		getContentPane().setBackground(new Color(227, 227, 255));
 		//창크기 변경 불가
 		setResizable(false);
 		
@@ -50,7 +52,7 @@ public class ClientChattingRoomPage extends JFrame{
 		//스크롤 패널 생성
 		JScrollPane readScroll = new JScrollPane(readArea);
 		//스크롤 패널 크기 설정
-		readScroll.setSize(532, 725);
+		readScroll.setSize(532, 722);
 		//스크롤 패널 위치 설정
 		readScroll.setLocation(5, 5);
 		//스크롤바 필요시만 생성
@@ -67,7 +69,7 @@ public class ClientChattingRoomPage extends JFrame{
 		//스크롤 패널 생성
 		JScrollPane writeScroll = new JScrollPane(writeArea);
 		//스크롤 패널 크기 설정
-		writeScroll.setSize(532, 50);
+		writeScroll.setSize(532, 48);
 		//스크롤 패널 위치 설정
 		writeScroll.setLocation(5, 730);
 		//스크롤바 필요시만 생성
@@ -78,20 +80,24 @@ public class ClientChattingRoomPage extends JFrame{
 		getContentPane().add(writeScroll);
 		
 		//버튼 공간 확보
-		RoundButton[] btn = new RoundButton[5];
-		for(int i = 0; i < 5; i++) {
+		RoundButton_DarkGray[] btn = new RoundButton_DarkGray[8];
+		for(int i = 0; i < 8; i++) {
 			//버튼 생성
-			btn[i] = new RoundButton();
+			btn[i] = new RoundButton_DarkGray();
 			//버튼 크기 설정
-			btn[i].setSize(100, 35);
+			btn[i].setSize(102, 35);
 			//버튼 위치 설정
-			btn[i].setLocation(10 + (i * 105), 785);
+			btn[i].setLocation(5 + (i * 107), 785);
 			//버튼 폰트 설정
 			btn[i].setFont(font);
 			//버튼 가운데 정렬
 			btn[i].setHorizontalAlignment(JLabel.CENTER);
 			//보더 추가
 			btn[i].setBorder(border2);
+			if(i > 4) {
+				btn[i].setVisible(false);
+			}
+			
 			//버튼 추가
 			getContentPane().add(btn[i]);
 		}
@@ -101,9 +107,17 @@ public class ClientChattingRoomPage extends JFrame{
 		btn[2].setText("올리기");
 		btn[3].setText("내려받기");
 		btn[4].setText("나가기");
+		btn[5].setText("프로필");
+		btn[6].setText("권한이전");
+		btn[7].setText("강퇴");
 		
 		//테이블 모델 생성
-		DefaultTableModel tableModel = new DefaultTableModel(body, head);
+		DefaultTableModel tableModel = new DefaultTableModel(body, head) {
+			//모델 수정 불가
+			public boolean isCellEditable(int row, int Column) {
+				return false;
+			}
+		};
 		//테이블 생성
 		JTable memberTable = new JTable();
 		//테이블에 모델 추가
@@ -113,33 +127,11 @@ public class ClientChattingRoomPage extends JFrame{
 		//패널 생성
 		JScrollPane tablePanel = new JScrollPane(memberTable);
 		//크기와 위치 설정
-		tablePanel.setBounds(542, 5, 300, 775);
+		tablePanel.setBounds(542, 5, 315, 773);
 		//필요시에만 스크롤바 생성
 		tablePanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		//패널 추가
 		getContentPane().add(tablePanel);
-		
-		//버튼 공간 확보
-		RoundButton[] newBtn = new RoundButton[2];
-		for(int i = 0; i < 2; i++) {
-			//버튼 생성
-			newBtn[i] = new RoundButton();
-			//버튼 크기 설정
-			newBtn[i].setSize(100, 35);
-			//버튼 위치 설정
-			newBtn[i].setLocation(572 + (i * 120), 785);
-			//버튼 폰트 설정
-			newBtn[i].setFont(font);
-			//버튼 가운데 정렬
-			newBtn[i].setHorizontalAlignment(JLabel.CENTER);
-			//보더 추가
-			newBtn[i].setBorder(border2);
-			//버튼 추가
-			getContentPane().add(newBtn[i]);
-		}
-		//버튼 텍스트 설정
-		newBtn[0].setText("프로필");
-		newBtn[1].setText("강퇴");
 		
 		//프레임 보이게 하기
 		setVisible(true);
@@ -160,10 +152,16 @@ public class ClientChattingRoomPage extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				if(!memberCheck) {
 					//프레임 사이즈 설정
-					setSize(862, 866);
+					setSize(877, 866);
+					for(int i = 5; i < 8 ; i++) {
+						btn[i].setVisible(true);
+					}
 					memberCheck = true;
 				} else {
 					setSize(558, 866);
+					for(int i = 5; i < 8 ; i++) {
+						btn[i].setVisible(false);
+					}
 					memberCheck = false;
 				}
 			}
@@ -195,6 +193,32 @@ public class ClientChattingRoomPage extends JFrame{
 				dispose();		
 			}
 		});
-
+		
+		//프로필 액션 리스너
+		btn[5].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();		
+			}
+		});
+		
+		//권한이전 액션 리스너
+		btn[6].addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();		
+			}
+		});
+		
+		//강퇴 액션 리스너
+		btn[7].addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();		
+			}
+		});
 	}
 }
